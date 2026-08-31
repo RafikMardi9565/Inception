@@ -1,9 +1,0 @@
-Additions to 1-5-the-stack.md
-
-- openssl command now generates a Subject Alternative Name (SAN): -addext "subjectAltName=DNS:${DOMAIN_NAME}"
-- SAN explanation: Chrome 58+/modern Firefox ignore CN; cert without SAN triggers NET::ERR_CERT_COMMON_NAME_INVALID
-- NGINX section: "Why no plain HTTP on port 80?" — 443-only design vs internal 301 redirect block (port 80 never published)
-- New section 4.3.1 "Installing WP-CLI in the Image" (phar download, php-cli/php-mysql/mariadb-client/less deps, pin version)
-- MariaDB section: "Debian root-auth gotcha" (unix_socket auth plugin, no root password by default, ALTER USER switches to password auth)
-- New section 11 "Bonus Services (Optional)": Redis, FTP, Adminer, static website, Portainer/cAdvisor + rules
-- Check Your Understanding renumbered to section 12; new questions 16 (SAN) and 17 (bonus services)

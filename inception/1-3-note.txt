@@ -1,7 +1,0 @@
-Additions to 1-3-docker-compose-networks.md
-
-- New section 1.2 "Compose v1 vs v2" (docker-compose deprecated vs docker compose plugin)
-- Inception rules table: build your own images (pulling official images forbidden); only port 443 published
-- Port table: "Declare in compose" row for the expose: key
-- New section 6.5 ".env vs env_file — Two Different Mechanisms" (interpolation vs container environment, common traps)
-- Check Your Understanding: new question 14 (.env vs env_file)
