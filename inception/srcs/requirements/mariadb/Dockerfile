@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y mariadb-server \
 
 # ---------- CONFIG FILE ----------
 
-COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY conf/99-custom.cnf /etc/mysql/mariadb.conf.d/99-custom.cnf
 
 # ---------- TOOLS ----------
 
