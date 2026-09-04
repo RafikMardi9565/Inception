@@ -1,7 +1,6 @@
 COMPOSE = docker compose -f srcs/docker-compose.yml
 DATA    = /home/$(USER)/data
 
-
 all: up
 
 up:
@@ -16,7 +15,6 @@ clean:
 
 fclean: clean
 	$(COMPOSE) down --volumes
-	@mkdir -p $(DATA)
-	docker run --rm -v $(DATA):/data debian:bookworm rm -rf /data/mariadb /data/wordpress
+	rm -rf $(DATA)
 
 re: fclean all
