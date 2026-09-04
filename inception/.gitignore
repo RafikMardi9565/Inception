@@ -1,3 +1,0 @@
-# Credentials & environment — NEVER commit
-srcs/.env
-secrets/

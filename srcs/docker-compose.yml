@@ -6,13 +6,12 @@ services:
       context: requirements/mariadb
     image: mariadb
     container_name: mariadb
-    restart: always
+    restart: on-failure
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
     secrets:
       - db_password
-      - db_root_password
     volumes:
       - mariadb_vol:/var/lib/mysql
     networks:
@@ -23,7 +22,7 @@ services:
       context: requirements/wordpress
     image: wordpress
     container_name: wordpress
-    restart: always
+    restart: on-failure
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -48,11 +47,11 @@ services:
       context: requirements/nginx
     image: nginx
     container_name: nginx
-    restart: always
+    restart: on-failure
     ports:
       - "443:443"
     volumes:
-      - wordpress_vol:/var/www/html:ro
+      - wordpress_vol:/var/www/html
     networks:
       - net
     depends_on:
@@ -85,8 +84,6 @@ volumes:
 secrets:
   db_password:
     file: ../secrets/db_password.txt
-  db_root_password:
-    file: ../secrets/db_root_password.txt
   wp_admin_password:
     file: ../secrets/wp_admin_password.txt
   wp_user_password:
